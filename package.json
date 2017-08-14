@@ -1,0 +1,16 @@
+{
+  "name": "coinbot",
+  "version": "0.0.0",
+  "description": "A bot to help manage cryptocurrency in my online wallets.",
+  "main": "app.js",
+  "repository": "git@github.com:mtimofiiv/coinbot.git",
+  "author": "mtimofiiv <npm@fiiv.io>",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "kraken-api": "^1.0.0",
+    "redis": "^2.8.0",
+    "request": "^2.81.0",
+    "slimbot": "^0.7.2"
+  }
+}
