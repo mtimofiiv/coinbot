@@ -16,12 +16,12 @@ async function run(chatId) {
       const coinValue = await Kraken.getCoinValue(coin)
 
       data[coin] = {
-        amount: Number(balance[coin]),
-        coinValue: Number(coinValue)
+        amount: (Number(balance[coin])).toFixed(2),
+        coinValue: (Number(coinValue)).toFixed(2)
       }
 
-      data[coin].currentValue = data[coin].amount * data[coin].coinValue
-      data.TOTAL += data[coin].currentValue
+      data[coin].currentValue = (data[coin].amount * data[coin].coinValue).toFixed(2)
+      data.TOTAL = (data.TOTAL + data[coin].currentValue).toFixed(2)
     }
 
     await CoinBot.sendCoinStats(chatId, data)
