@@ -13,6 +13,9 @@ async function run(chatId) {
     const data = { TOTAL: 0 }
 
     for (const coin in balance) {
+      // Ignore any remaining tether balance, we only want cryptocurrencies!
+      if (coin === Kraken.FIAT_TETHER) continue
+
       const coinValue = await Kraken.getCoinValue(coin)
 
       data[coin] = {
